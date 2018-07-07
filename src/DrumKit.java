@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 public class DrumKit implements MouseListener {
 
     JLabel drumLabelWithImage;
-
+    JLabel symbolLabelWithImage;
     public static void main(String[] args) throws Exception {
    	 new DrumKit().getGoing();
     }
@@ -31,7 +31,8 @@ public class DrumKit implements MouseListener {
    	 	JFrame go = new JFrame();
    	 // 2. Make the frame visible and 
     //     set its default close operation to JFrame.EXIT_ON_CLOSE
-   	 go.setVisible(true);
+   go.setDefaultCloseOperation(go.EXIT_ON_CLOSE);
+   	 	go.setVisible(true);
    	 // 3. Set the size of the frame
    	 go.setSize(300, 300);
    	 // 4. Set the title of the frame
@@ -49,13 +50,23 @@ public class DrumKit implements MouseListener {
    	 // 10. Add the image to the panel
     panel.add(drumLabelWithImage);
    	 // 11. Set the layout of the panel to "new GridLayout()"
-     GridLayout panel2  = new GridLayout();
+    panel.setLayout( new GridLayout());
       	 // 12. call the pack() method on the frame.  Run your program. Do you see your drum image?
    	  go.pack();
    	 // 13. add this mouse listener to drumLabelWithImage
-    	drumLabelWithImage.addMouseListener(null);
+    	drumLabelWithImage.addMouseListener(this);
      	 // 18. Add more images to make a drumkit. Remember to add this mouse listener to each one.
-
+    	
+    	String symbol = "drum2.jpeg";
+    	symbolLabelWithImage = createLabelImage(symbol);
+   panel.add(symbolLabelWithImage);
+    go.pack();
+   symbolLabelWithImage.addMouseListener(this);
+    
+    
+    
+    
+    
     }
 
     public void mouseClicked(MouseEvent e) {
@@ -65,7 +76,13 @@ public class DrumKit implements MouseListener {
    	 
    	 // 15. Download a drum sound and drop it into your "default package". You can find it on freesound.org. To download it, log in as leagueofamazing/code4life.
    	 // 16. If they clicked on the drumImage...
-
+   	 if (drumClicked==drumLabelWithImage) {
+		playSound("drumm.wav");
+	
+   	 }
+   	 else {
+		playSound("cymbal.wav");
+	}
    		 // 17. ...use the playSound method to play a drum sound. Test to see if it works
 
  
