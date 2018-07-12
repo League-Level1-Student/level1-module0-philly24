@@ -45,10 +45,14 @@ import javax.swing.JPanel;
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==b1) {
-			System.out.println("work");
+			playSound("drum.wav");
 		
 		}
-		System.out.println(b1);
+		else if (e.getSource()==b2) {
+			playSound("cymbal.wav");
+		} else {
+			playSound("fart.wav");
+		}
 
 
 	}
