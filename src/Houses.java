@@ -12,7 +12,7 @@ public class Houses {
 		rob.setX(50);
 		rob.setY(600);
 		rob.penDown();
-		
+		rob.setPenWidth(10);
 		for (int i = 0; i < 9; i++) {
 			String answer2 = JOptionPane.showInputDialog("what type of roof? peak or flat");
 			
@@ -29,6 +29,7 @@ public class Houses {
 				num=120;
 			} else {
 				num=250;
+				
 			}
 			if (answer2.equalsIgnoreCase("flat")) {
 				house(rob,num,null,false);
