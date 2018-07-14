@@ -11,11 +11,29 @@ public static void main(String[] args) {
 
 
 static void house() {
+	
+	
 	Robot rob = new Robot();
-	
-		
-	
 	rob.setSpeed(10);
+	rob.setX(50);
+	rob.setY(100);
+	rob.penDown();
+	for (int i = 0; i < 9; i++) {
+	rob.move(100);
+	rob.turn(90);
+	rob.move(30);
+	rob.turn(90);
+	rob.move(100);
+	rob.turn(270);
+	rob.move(20);
+	rob.turn(270);
+}	
+
+	
+	
+	
+	
+	/*rob.setSpeed(10);
 	rob.setX(50);
 	rob.setY(100);
 	rob.penDown();
@@ -92,7 +110,7 @@ static void house() {
 	rob.move(100);
 	rob.turn(270);
 	rob.move(20);
-	rob.turn(270);
+	rob.turn(270);*/
 }
 }
 
